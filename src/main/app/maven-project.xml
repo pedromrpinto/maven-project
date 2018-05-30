@@ -36,6 +36,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 			doc:name="Object to JSON" />
 		<logger message="Publishing message #[message.id] to flights queue"
 			level="INFO" doc:name="Logger" />
+        <set-property propertyName="#['Content-Type']" value="#['application/json']" encoding="windows-1256" doc:name="Property"/>
 		<jms:outbound-endpoint queue="flights"
 			connector-ref="Active_MQ" doc:name="JMS" />
 	</flow>
